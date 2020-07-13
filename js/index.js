@@ -46,10 +46,62 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
-const nav = document.querySelector("nav");
-console.log(nav);
-
 const cta = document.querySelector(".cta");
-cta.querySelector("h1").innerText = siteContent.cta.h1;
-cta.querySelector("button").innerText = siteContent.cta.button;
+cta.querySelector("h1").textContent = siteContent.cta.h1;
+cta.querySelector("button").textContent = siteContent.cta.button;
 console.log(cta);
+
+const navOne = document.querySelectorAll("a");
+navOne[0].textContent = siteContent.nav["nav-item-1"];
+navOne[1].textContent = siteContent.nav["nav-item-2"];
+navOne[2].textContent = siteContent.nav["nav-item-3"];
+navOne[3].textContent = siteContent.nav["nav-item-4"];
+navOne[4].textContent = siteContent.nav["nav-item-5"];
+navOne[5].textContent = siteContent.nav["nav-item-6"];
+console.log(navOne);
+
+//second image
+const codeSnippet = document.getElementById("cta-img");
+codeSnippet.setAttribute("src", siteContent.cta["img-src"]);
+
+//third image
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+//main content
+const headFour = document.querySelectorAll("h4");
+headFour[0].textContent = siteContent["main-content"]["features-h4"];
+headFour[1].textContent = siteContent["main-content"]["about-h4"];
+headFour[2].textContent = siteContent["main-content"]["services-h4"];
+headFour[3].textContent = siteContent["main-content"]["product-h4"];
+headFour[4].textContent = siteContent["main-content"]["vision-h4"];
+headFour[5].textContent = siteContent.contact["contact-h4"];
+console.log(headFour);
+
+const mainP = document.querySelectorAll("p");
+mainP[0].textContent = siteContent["main-content"]["features-content"];
+mainP[1].textContent = siteContent["main-content"]["about-content"];
+mainP[2].textContent = siteContent["main-content"]["services-content"];
+mainP[3].textContent = siteContent["main-content"]["product-content"];
+mainP[4].textContent = siteContent["main-content"]["vision-content"];
+mainP[5].textContent = siteContent.contact.address;
+mainP[6].textContent = siteContent.contact.phone;
+mainP[7].textContent = siteContent.contact.email;
+mainP[8].textContent = siteContent.footer.copyright;
+
+//new added Elements
+const nv = document.querySelector("nav");
+const newLink = document.createElement("a");
+newLink.textContent = "Cheese";
+newLink.style.color = "orange";
+nv.appendChild(newLink);
+
+const newLink2 = document.createElement("a");
+newLink2.textContent = "Bacon";
+newLink2.style.color = "blue";
+nv.prepend(newLink2);
+
+//changing the navigation to green
+navOne.forEach((element) => {
+  element.style.color = "green";
+});
